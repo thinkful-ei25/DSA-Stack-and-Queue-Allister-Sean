@@ -1,16 +1,16 @@
-class Node{ 
-    constructor(data, next){
-        this.data = data;  
-        this.next = next; 
+class Node {
+    constructor(data, next) {
+        this.data = data;
+        this.next = next;
     }
 }
 
-class Stack{ 
-    constructor(){ 
-        this.top = null; 
+class Stack {
+    constructor() {
+        this.top = null;
     }
 
-    push(data){ 
+    push(data) {
         /*
             A <- B <- C <- D
                            t   N 
@@ -18,16 +18,16 @@ class Stack{
                                 n.next = top
                                 this.top = newItem   
         */
-       if (this.top === null){ 
-           this.top = new Node(data, null); 
-           return this.top; 
-       }
+        if (this.top === null) {
+            this.top = new Node(data, null);
+            return this.top;
+        }
 
-       let newNode = new Node(data, this.top); 
-       this.top = newNode; 
+        let newNode = new Node(data, this.top);
+        this.top = newNode;
     }
 
-    pop(){ 
+    pop() {
         /*
             A <- B <- C <- D
                            t
@@ -35,13 +35,13 @@ class Stack{
                            this.top = this.top.next
                            return removeNode
         */
-        if (this.top === null){ 
-            throw new Error('Cannot pop an empty Stack'); 
+        if (this.top === null) {
+            throw new Error('Cannot pop an empty Stack');
         }
 
-        let removeNode = this.top; 
-        this.top = removeNode.next; 
-        return removeNode.data; 
+        let removeNode = this.top;
+        this.top = removeNode.next;
+        return removeNode.data;
     }
 
     peek() {

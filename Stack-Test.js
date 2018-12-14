@@ -1,5 +1,5 @@
 const Stack = require('./Stack'); 
-const {isPalindrome} = require('./Stack-Helpers'); 
+const {isPalindrome, matchParens} = require('./Stack-Helpers'); 
 
 function main(){ 
     let starTreck = new Stack(); 
@@ -12,10 +12,11 @@ function main(){
     starTreck.pop();
     starTreck.display();
 
-    console.log(isPalindrome("dad"));
-    console.log(isPalindrome("A man, a plan, a canal: Panama"));
-    console.log(isPalindrome("1001"));
-    console.log(isPalindrome("Tauhida"));  
+    // console.log(isPalindrome("dad"));
+    // console.log(isPalindrome("A man, a plan, a canal: Panama"));
+    // console.log(isPalindrome("1001"));
+    // console.log(isPalindrome("Tauhida"));
+    console.log(matchParens('(5+5'));  
 }
 
 

@@ -27,4 +27,70 @@ function isPalindrome(s) {
     return false; 
 }
 
-module.exports = {isPalindrome}; 
+function matchParens(expression) {
+    let expressionStack = new Stack();
+    let parenCounterForward = 0;
+    let parenCounterBack = 0
+    
+    for (i = 0; i < expression.length; i++) {
+        expressionStack.push(expression[i])
+        if (expression[i] === '(') {
+            parenCounterForward++;
+        }
+        if (expression[i] === ')') {
+            parenCounterForward--
+        }
+        if (parenCounterForward === -1) {
+            return i
+        }
+        if (expression[expression.length-1-i] === ')') {
+            parenCounterBack++
+        }
+        if (expression[expression.length-1-i] === '(') {
+            parenCounterBack--
+        }
+        if (parenCounterBack === -1) {
+            return expression.length - 1 - i
+        }
+        
+    }
+    return true;
+
+    
+    /*
+   instantiate new stack
+   iterate through string and push chars into stack
+   push all items onto stack with paren counter and position counter
+   if paren counter = -1 return position counter
+   reset paren counter
+   iterate through stack from top with paren coutner and position counter
+   if paren counter = -1 return string length - position counter
+
+
+   input: (((((()
+   output: 0 or 4
+   
+   input: ((())())())
+   output: 10 or 7
+   
+   input: ((())))
+   output: 6
+
+   input: ((((())
+   output: 0
+   
+   input: (5+5)
+   output: true
+
+   input: ()
+   output: true
+
+   input: (5+5
+    output: 0
+
+    input: 5+5)
+    output: 3
+    */
+}
+
+module.exports = {isPalindrome, matchParens}; 
