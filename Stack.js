@@ -43,6 +43,21 @@ class Stack{
         this.top = removeNode.next; 
         return removeNode.data; 
     }
+
+    peek() {
+        console.log(this.top.data);
+    }
+
+    display() {
+        if (this.top === null) {
+            throw new Error("Can't display empty stack");
+        }
+        let current = this.top
+        while (current) {
+            console.log(current.data);
+            current = current.next;
+        }
+    }
 }
 
 module.exports = Stack; 

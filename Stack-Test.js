@@ -6,10 +6,11 @@ function main(){
     starTreck.push("Spock");
     starTreck.push("McCoy");
     starTreck.push("Scotty");   
-    console.log(starTreck.pop()); 
-    console.log(starTreck.pop()); 
-    console.log(starTreck.pop()); 
-    console.log(starTreck.pop()); 
+    starTreck.peek();
+    starTreck.pop(); 
+    starTreck.pop();
+    starTreck.display();
+    
 }
 
 main(); 
