@@ -1,5 +1,5 @@
 const Stack = require('./Stack'); 
-const {isPalindrome, matchParens} = require('./Stack-Helpers'); 
+const {isPalindrome, matchParens, sortStack} = require('./Stack-Helpers'); 
 
 function main(){ 
     let starTreck = new Stack(); 
@@ -17,6 +17,15 @@ function main(){
     // console.log(isPalindrome("1001"));
     // console.log(isPalindrome("Tauhida"));
     console.log(matchParens('(5+5'));  
+    let stack = new Stack(); 
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+    stack.push(4);
+    
+    let sortedStack = sortStack(stack); 
+    sortedStack.display(); 
+
 }
 
 

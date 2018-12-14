@@ -23,7 +23,7 @@ function isPalindrome(s) {
     if (s == nS){ 
         return true; 
     }
-    
+
     return false; 
 }
 
@@ -93,4 +93,18 @@ function matchParens(expression) {
     */
 }
 
-module.exports = {isPalindrome, matchParens}; 
+function sortStack(s){ 
+    let sortedStack = new Stack(); 
+
+    while(s.top !==null){ 
+        let tmp = s.pop(); 
+
+        while(sortedStack.top !==null && sortedStack.peek() > tmp){ 
+            s.push(sortedStack.pop()); 
+        }
+        sortedStack.push(tmp); 
+    }
+    return sortedStack; 
+}
+
+module.exports = {isPalindrome, matchParens, sortStack}; 

@@ -45,7 +45,9 @@ class Stack {
     }
 
     peek() {
-        console.log(this.top.data);
+        if (this.top === null) return; 
+        // console.log(this.top.data);
+        return this.top.data; 
     }
 
     display() {
